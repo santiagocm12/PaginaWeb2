@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<htm>
+    <head>
+      <title>Coleccion de arte</title>
+  
+      <link href="index.css" rel="stylesheet">
+  
+    </head>
+    
+    <body>
+  
+      <header>
+        <img src="assets/Logo-pintura.png" width="150" height="100">
+      </header>
+  
+      <div class="carousel">
+        <img src="assets/Logo-Magistral.png">
+      </div>
+  
+      <div style="width: 80%; margin: auto; margin-top: 20px; background-color: rgb(252, 245, 245);">
+        <table>
+         <!--  Parted de arriba de la tabla -->
+          <thead>
+            <th>Avatar del artista</th>
+            <th>Usuario del artista</th>
+            <th>Nombre de la coleccion</th>
+            <th>Numero de likes</th>
+            <th>Comprar</th>
+            <th>Dar Like</th>
+          </thead>
+          <tbody id="Tabla-Obras">
+          </tbody> 
+        </table>
+
+        <script>
+          const TablaCompras = document.getElementById("Tabla-Obras");
+
+          var obras;
+
+          if (!localStorage.obras) {
+           obras = [
+           {
+            "Avatar": "Imagen1",
+            "Usuario": "Monosusio",
+            "Coleccion": "NombreColeccion1",
+            "likes": 0
+          },
+          {
+            "Avatar": "Imagen2",
+            "Usuario": "Sininox",
+            "Coleccion": "NombreColeccion2",
+            "likes": 0
+          },
+          {
+            "Avatar": "Imagen3",
+            "Usuario": "Isaac Neetero",
+            "Coleccion": "NombreColeccion3",
+            "likes": 0
+          },
+          {
+            "Avatar": "Imagen4",
+            "Usuario": "Guts",
+            "Coleccion": "NombreColeccion4",
+            "likes": 0
+          },
+          {
+            "Avatar": "Imagen5",
+            "Usuario": "El mata gordas",
+            "Coleccion": "NombreColeccion5",
+            "likes": 0
+          },
+          ];
+          localStorage.setItem("obras", JSON.stringify(obras));
+        }else {
+          obras = JSON.parse(localStorage.obras);
+        }
+
+        obras.map(tweet => {
+          let newTr = document.createElement("tr");
+
+          let newTdAvatar = document.createElement("td");
+          newTdAvatar.innerHTML = obras.Avatar;
+
+          let newTdUsuario = document.createElement("td");
+          newTdUsuario.innerHTML = obras.Usuario;
+
+          let newTdColeccion = document.createElement("td");
+          newTdColeccion.innerHTML = obras.Coleccion;
+
+          let newTdLikes = document.createElement("td");
+          newTdLikes.Usuario = "num-likes-" + obras.id;
+          newTdLikes.innerHTML = obras.likes;
+
+          let newTdButton = document.createElement("td");
+          let newButton = document.createElement("button");
+          newButton.id = "add-like-" + obras.likes;
+          newButton.innerHTML = "Add Like";
+
+          let newTdButtonC = document.createElement("td");
+          let newButtonC = document.createElement("button");
+          newButtonC.innerHTML = "Comprar";
+
+          newButton.addEventListener("click", function(event) {
+          let Usuario = event.srcElement.Usuario.replace("add-like-", "");
+
+          let myUsuario = obras(obras => obras.Usuario == Usuario);
+
+          myUsuario.likes++;
+
+          document.getElementById("num-likes-" + Usuario).innerHTML = myUsuario.likes;
+
+          localStorage.setItem("obras", JSON.stringify(obras));
+          });
+          newTdButton.append(newButton);
+          newTdButton.append(newButtonC);
+
+          newTr.appendChild(newTdAvatar);
+          newTr.appendChild(newTdUsuario);
+          newTr.appendChild(newTdColeccion);
+          newTr.appendChild(newTdLikes);
+          newTr.appendChild(newTdButton);
+          newTr.appendChild(newTdButtonC);
+
+          TablaCompras.appendChild(newTr);
+        });
+        </script>
+      </div>
+    </body>
+  </htm>
