@@ -24,106 +24,138 @@
             <th>Avatar del artista</th>
             <th>Usuario del artista</th>
             <th>Nombre de la coleccion</th>
-            <th>Numero de likes</th>
             <th>Comprar</th>
             <th>Dar Like</th>
-          </thead>
-          <tbody id="Tabla-Obras">
-          </tbody> 
-        </table>
+          
+          <!-- Perfil de artista 1 -->
+          <tr>
+            <td><img src="Avatares(artistas)/Avatar1.jpg"width="125" height="75"></td>
+            <td>Monosusio</td>
+            <td>NombreColeccion1</td>
+            <td><button> Comprar</button></td>
+            <td> <div class="container">
+              <button id="likebtn">
+                Like
+              <i class="fa fa-thumbs-up"></i>
+              </button>
+              <input type="number" id="input1" value="0"
+              name="">
+              </div>
+            </td>
+            <script type="text/javascript">
+              let likebtn =document.querySelector('#likebtn');
+              let input1 = document.querySelector('#input1');
 
-        <script>
-          const TablaCompras = document.getElementById("Tabla-Obras");
+              likebtn.addEventListener('click',()=>{
+                input1.value=parseInt(input1.value)+1;
+                input1.style.color = "#052B77";
+              })
+            </script>
+          </tr>
+          <!-- Perfil de artista 2 -->
+          <tr >
+            <td ><img src="Avatares(artistas)/Avatar2.jpg"width="125" height="75"></td>
+            <td>Sininox</td>
+            <td>NombreColeccion2</td>
+            <td><button>Comprar</button></td>
+            <td> <div class="container">
+              <button id="likebtn3">
+                Like
+              <i class="fa fa-thumbs-up"></i>
+              </button>
+              <input type="number" id="input3" value="0"
+              name="">
+              </div>
+            </td>
+            <script type="text/javascript">
+              let likebtn3 =document.querySelector('#likebtn3');
+              let input3 = document.querySelector('#input3');
 
-          var obras;
+              likebtn3.addEventListener('click',()=>{
+                input3.value=parseInt(input3.value)+1;
+                input3.style.color = "#052B77";
+              })
+            </script>
+          </tr>
+          </tr>
+          <!-- Perfil de artista 3 -->
+          <tr>
+            <td><img src="Avatares(artistas)/Avatar3.jpg"width="125" height="75"></td>
+            <td>Isaac Neetero</td>
+            <td>NombreColeccion3</td>
+            <td><button>Comprar</button></td>
+            <td> <div class="container">
+              <button id="likebtn2">
+                Like
+              <i class="fa fa-thumbs-up"></i>
+              </button>
+              <input type="number" id="input2" value="0"
+              name="">
+              </div>
+            </td>
+            <script type="text/javascript">
+              let likebtn2 =document.querySelector('#likebtn2');
+              let input2 = document.querySelector('#input2');
 
-          if (!localStorage.obras) {
-           obras = [
-           {
-            "Avatar": "Imagen1",
-            "Usuario": "Monosusio",
-            "Coleccion": "NombreColeccion1",
-            "likes": 0
-          },
-          {
-            "Avatar": "Imagen2",
-            "Usuario": "Sininox",
-            "Coleccion": "NombreColeccion2",
-            "likes": 0
-          },
-          {
-            "Avatar": "Imagen3",
-            "Usuario": "Isaac Neetero",
-            "Coleccion": "NombreColeccion3",
-            "likes": 0
-          },
-          {
-            "Avatar": "Imagen4",
-            "Usuario": "Guts",
-            "Coleccion": "NombreColeccion4",
-            "likes": 0
-          },
-          {
-            "Avatar": "Imagen5",
-            "Usuario": "El mata gordas",
-            "Coleccion": "NombreColeccion5",
-            "likes": 0
-          },
-          ];
-          localStorage.setItem("obras", JSON.stringify(obras));
-        }else {
-          obras = JSON.parse(localStorage.obras);
-        }
+              likebtn2.addEventListener('click',()=>{
+                input2.value=parseInt(input2.value)+1;
+                input2.style.color = "#052B77";
+              })
+            </script>
+          </tr>
+          </tr>
+          <!-- Perfil de artista 4 -->
+          <tr>
+            <td><img src="Avatares(artistas)/Avatar4.jpg"width="125" height="75"></td>
+            <td>Guts</td>
+            <td>NombreColeccion4</td>
+            <td><button>Comprar</button></td>
+            <td> <div class="container">
+              <button id="likebtn4">
+                Like
+              <i class="fa fa-thumbs-up"></i>
+              </button>
+              <input type="number" id="input4" value="0"
+              name="">
+              </div>
+            </td>
+            <script type="text/javascript">
+              let likebtn4 =document.querySelector('#likebtn4');
+              let input4 = document.querySelector('#input4');
 
-        obras.map(tweet => {
-          let newTr = document.createElement("tr");
+              likebtn4.addEventListener('click',()=>{
+                input4.value=parseInt(input4.value)+1;
+                input4.style.color = "#052B77";
+              })
+            </script>
+          </tr>
+          <!-- Perfil de artista 5 -->
+          <tr>
+            <td><img src="Avatares(artistas)/Avatar5.jpg"width="125" height="75"></td>
+            <td>El mata gordas</td>
+            <td>NombreColeccion</td>
+            <td><button>Comprar</button></td>
+            <td> <div class="container">
+              <button id="likebtn5">
+                Like
+              <i class="fa fa-thumbs-up"></i>
+              </button>
+              <input type="number" id="input5" value="0"
+              name="">
+              </div>
+            </td>
+            <script type="text/javascript">
+              let likebtn5 =document.querySelector('#likebtn5');
+              let input5 = document.querySelector('#input5');
 
-          let newTdAvatar = document.createElement("td");
-          newTdAvatar.innerHTML = obras.Avatar;
+              likebtn5.addEventListener('click',()=>{
+                input5.value=parseInt(input5.value)+1;
+                input5.style.color = "#052B77";
+              })
+            </script>
+          </tr>
 
-          let newTdUsuario = document.createElement("td");
-          newTdUsuario.innerHTML = obras.Usuario;
-
-          let newTdColeccion = document.createElement("td");
-          newTdColeccion.innerHTML = obras.Coleccion;
-
-          let newTdLikes = document.createElement("td");
-          newTdLikes.Usuario = "num-likes-" + obras.id;
-          newTdLikes.innerHTML = obras.likes;
-
-          let newTdButton = document.createElement("td");
-          let newButton = document.createElement("button");
-          newButton.id = "add-like-" + obras.likes;
-          newButton.innerHTML = "Add Like";
-
-          let newTdButtonC = document.createElement("td");
-          let newButtonC = document.createElement("button");
-          newButtonC.innerHTML = "Comprar";
-
-          newButton.addEventListener("click", function(event) {
-          let Usuario = event.srcElement.Usuario.replace("add-like-", "");
-
-          let myUsuario = obras(obras => obras.Usuario == Usuario);
-
-          myUsuario.likes++;
-
-          document.getElementById("num-likes-" + Usuario).innerHTML = myUsuario.likes;
-
-          localStorage.setItem("obras", JSON.stringify(obras));
-          });
-          newTdButton.append(newButton);
-          newTdButton.append(newButtonC);
-
-          newTr.appendChild(newTdAvatar);
-          newTr.appendChild(newTdUsuario);
-          newTr.appendChild(newTdColeccion);
-          newTr.appendChild(newTdLikes);
-          newTr.appendChild(newTdButton);
-          newTr.appendChild(newTdButtonC);
-
-          TablaCompras.appendChild(newTr);
-        });
-        </script>
+        </thead>
       </div>
     </body>
   </htm>
