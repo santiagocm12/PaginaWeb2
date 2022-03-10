@@ -11,6 +11,26 @@
   
       <header>
         <img src="assets/Logo-pintura.png" width="150" height="100">
+
+        <div class="container">
+          <button id="addbtn">
+            Añadir dinero
+          <i class="fa fa-thumbs-up"></i>
+          </button>
+          <input type="number" id="input" value="0"
+          name="">
+          </div>
+        </td>
+        <script type="text/javascript">
+          let addbtn =document.querySelector('#addbtn');
+          let input = document.querySelector('#input');
+
+          addbtn.addEventListener('click',()=>{
+            input.value=parseInt(input.value)+1;
+            input.style.color = "#052B77";
+          })
+        </script>
+
       </header>
   
       <div class="carousel">
@@ -24,6 +44,7 @@
             <th>Avatar del artista</th>
             <th>Usuario del artista</th>
             <th>Nombre de la coleccion</th>
+            <th>Precio de la coleccion</th>
             <th>Comprar</th>
             <th>Dar Like</th>
           
@@ -32,7 +53,15 @@
             <td><img src="Avatares(artistas)/Avatar1.jpg"width="125" height="75"></td>
             <td>Monosusio</td>
             <td>NombreColeccion1</td>
-            <td><button> Comprar</button></td>
+            <td>5</td>
+            <td><button id="boton1"> Comprar</button></td>
+
+            <script type="text/javascript">
+              document.getElementById('boton1').onclick = function(){
+              alert('enhorabuena has comprado la obra');
+              }
+            </script>
+
             <td> <div class="container">
               <button id="likebtn">
                 Like
@@ -57,7 +86,13 @@
             <td ><img src="Avatares(artistas)/Avatar2.jpg"width="125" height="75"></td>
             <td>Sininox</td>
             <td>NombreColeccion2</td>
-            <td><button>Comprar</button></td>
+            <td>10</td>
+            <td><button id="boton2">Comprar</button></td>
+            <script type="text/javascript">
+              document.getElementById('boton2').onclick = function(){
+              alert('enhorabuena has comprado la obra');
+              }
+            </script>
             <td> <div class="container">
               <button id="likebtn3">
                 Like
@@ -83,7 +118,13 @@
             <td><img src="Avatares(artistas)/Avatar3.jpg"width="125" height="75"></td>
             <td>Isaac Neetero</td>
             <td>NombreColeccion3</td>
-            <td><button>Comprar</button></td>
+            <td>7</td>
+            <td><button id="boton3">Comprar</button></td>
+            <script type="text/javascript">
+              document.getElementById('boton3').onclick = function(){
+              alert('enhorabuena has comprado la obra');
+              }
+            </script>
             <td> <div class="container">
               <button id="likebtn2">
                 Like
@@ -109,7 +150,13 @@
             <td><img src="Avatares(artistas)/Avatar4.jpg"width="125" height="75"></td>
             <td>Guts</td>
             <td>NombreColeccion4</td>
-            <td><button>Comprar</button></td>
+            <td>8</td>
+            <td><button id="boton4">Comprar</button></td>
+            <script type="text/javascript">
+              document.getElementById('boton4').onclick = function(){
+              alert('enhorabuena has comprado la obra');
+              }
+            </script>
             <td> <div class="container">
               <button id="likebtn4">
                 Like
@@ -134,7 +181,13 @@
             <td><img src="Avatares(artistas)/Avatar5.jpg"width="125" height="75"></td>
             <td>El mata gordas</td>
             <td>NombreColeccion</td>
-            <td><button>Comprar</button></td>
+            <td>10</td>
+            <td><button id="boton5">Comprar</button></td>
+            <script type="text/javascript">
+              document.getElementById('boton5').onclick = function(){
+              alert('enhorabuena has comprado la obra');
+              }
+            </script>
             <td> <div class="container">
               <button id="likebtn5">
                 Like
